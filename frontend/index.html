@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BYC Codex Portal</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>BYC Codex</h1>
+    <nav>
+      <ul>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#membership" class="nav-link">Membership</a></li>
+        <li><a href="#events" class="nav-link">Events</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#login" class="nav-link" id="login-link">Login</a></li>
+        <li><a href="#member" class="nav-link">Member Dashboard</a></li>
+        <li><a href="#admin" class="nav-link">Admin Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="page-section active">
+      <h2>Home</h2>
+      <div id="home-content"></div>
+    </section>
+    <section id="about" class="page-section">
+      <h2>About</h2>
+      <p>Learn about the club's history, mission, and programs.</p>
+    </section>
+    <section id="membership" class="page-section">
+      <h2>Membership</h2>
+      <p>Discover benefits, dues, and how to join the club.</p>
+    </section>
+    <section id="events" class="page-section">
+      <h2>Events</h2>
+      <div id="events-list"></div>
+    </section>
+    <section id="contact" class="page-section">
+      <h2>Contact</h2>
+      <p>Email us at info@byc.test or visit the clubhouse during open hours.</p>
+    </section>
+    <section id="login" class="page-section">
+      <h2>Login</h2>
+      <form id="login-form">
+        <label>Email <input type="email" name="email" required /></label>
+        <label>Password <input type="password" name="password" required /></label>
+        <button type="submit">Sign In</button>
+      </form>
+      <div id="login-status"></div>
+    </section>
+
+    <section id="member" class="page-section">
+      <h2>Member Dashboard</h2>
+      <div class="dashboard-grid">
+        <article>
+          <h3>Announcements</h3>
+          <div id="member-announcements"></div>
+        </article>
+        <article>
+          <h3>Events & RSVPs</h3>
+          <div id="member-events"></div>
+        </article>
+        <article>
+          <h3>Documents & Newsletters</h3>
+          <div id="member-documents"></div>
+        </article>
+        <article>
+          <h3>Dock Layout</h3>
+          <div id="dock-layout"></div>
+        </article>
+        <article>
+          <h3>Directory</h3>
+          <div id="member-directory"></div>
+        </article>
+        <article>
+          <h3>My Profile</h3>
+          <form id="profile-form">
+            <label>Display Name <input name="displayName" /></label>
+            <label>Boat Name <input name="boatName" /></label>
+            <label>Slip <input name="slip" /></label>
+            <label>Show Phone <input type="checkbox" name="phoneVisible" /></label>
+            <label>Show Email <input type="checkbox" name="emailVisible" /></label>
+            <button type="submit">Update Profile</button>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <section id="admin" class="page-section">
+      <h2>Admin Dashboard</h2>
+      <div class="dashboard-grid">
+        <article>
+          <h3>Content</h3>
+          <form id="announcement-form">
+            <label>Title <input name="title" required /></label>
+            <label>Body <textarea name="body" required></textarea></label>
+            <label>Visibility
+              <select name="visibility">
+                <option value="public">Public</option>
+                <option value="member">Member</option>
+              </select>
+            </label>
+            <button type="submit">Publish Announcement</button>
+          </form>
+        </article>
+        <article>
+          <h3>Events</h3>
+          <form id="event-form">
+            <label>Title <input name="title" required /></label>
+            <label>Date <input type="date" name="date" required /></label>
+            <label>Location <input name="location" required /></label>
+            <label>Visibility
+              <select name="visibility">
+                <option value="public">Public</option>
+                <option value="member">Member</option>
+              </select>
+            </label>
+            <label>Capacity <input type="number" name="capacity" min="1" /></label>
+            <button type="submit">Create Event</button>
+          </form>
+        </article>
+        <article>
+          <h3>Documents</h3>
+          <form id="document-form" enctype="multipart/form-data">
+            <label>Title <input name="title" required /></label>
+            <label>Category <input name="category" required /></label>
+            <label>Visibility
+              <select name="visibility">
+                <option value="public">Public</option>
+                <option value="member">Member</option>
+              </select>
+            </label>
+            <label>File <input type="file" name="file" /></label>
+            <button type="submit">Upload</button>
+          </form>
+        </article>
+        <article>
+          <h3>Docks</h3>
+          <form id="dock-form">
+            <label>Slip <input name="slip" required /></label>
+            <label>Boat Name <input name="boatName" required /></label>
+            <label>Owner ID <input name="ownerId" required /></label>
+            <button type="submit">Assign Slip</button>
+          </form>
+        </article>
+        <article>
+          <h3>Users & Roles</h3>
+          <div id="user-list"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script src="/js/app.js"></script>
+</body>
+</html>
